@@ -8,6 +8,8 @@
 
 #import "DetailTripViewController.h"
 #import "TripDetailTableViewCell.h"
+#import "MapDetailTripViewController.h"
+#import "ScheduleDetailTripViewController.h"
 
 @interface DetailTripViewController ()
 
@@ -28,9 +30,35 @@
     return _trip.events.count;
 }
 
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"showTripMap"]) {
+        MapDetailTripViewController *mapDetailVC = [segue destinationViewController];
+        mapDetailVC.mapRegion = [_mapView region];
+    } else if ([[segue identifier] isEqualToString:@"showTripSchedule"]) {
+        ScheduleDetailTripViewController *scheduleDetailVC = [segue destinationViewController];
+        scheduleDetailVC.trip = _trip;
+    }
+}
+
+- (void) handleSwipeDownFrom:(UISwipeGestureRecognizer *)gestureRecognizer {
+    [self performSegueWithIdentifier:@"showTripMap" sender:nil];
+}
+
+- (void) handleSwipeUpFrom:(UISwipeGestureRecognizer *)gestureRecognizer {
+    [self performSegueWithIdentifier:@"showTripSchedule" sender:nil];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    UISwipeGestureRecognizer* swipeDownGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeDownFrom:)];
+    UISwipeGestureRecognizer* swipeUpGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeUpFrom:)];
+    
+    swipeDownGestureRecognizer.direction = UISwipeGestureRecognizerDirectionDown;
+    swipeUpGestureRecognizer.direction = UISwipeGestureRecognizerDirectionUp;
+    
+    [self.view addGestureRecognizer:swipeDownGestureRecognizer];
+    [self.view addGestureRecognizer:swipeUpGestureRecognizer];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

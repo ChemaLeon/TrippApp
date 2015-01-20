@@ -53,7 +53,7 @@
     van_trip.events = vancouverEvents;
     ((Trip*)trips[1]).events = vancouverEvents;
     ((Trip*)trips[2]).events = vancouverEvents;
-    ((Trip*)trips[3]).events = vancouverEvents;
+    //((Trip*)trips[3]).events = vancouverEvents;
     
     van_trip.locationCoordinates = [[Location alloc] initWithLatitude:[NSNumber numberWithFloat:(49.264281f)]
                                                          AndLongitude:[NSNumber numberWithFloat:(-123.078053f)]];

@@ -41,10 +41,15 @@ NSArray* trips;
     }
 }
 
+- (void) newTripButtonPressed {
+    NSLog(@"New Trip Button Pressed");
+}
+
 // Populate the NSArray of the trip data with the MockDataModel class. A temporal encapsulation of the Trips that the mock user has created on the device.
 - (void)viewDidLoad {
     [super viewDidLoad];
     trips = [MockDataModel GetAllTrips];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(newTripButtonPressed)];
 }
 
 - (void)didReceiveMemoryWarning {
