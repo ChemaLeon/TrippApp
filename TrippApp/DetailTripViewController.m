@@ -48,23 +48,35 @@
     [self performSegueWithIdentifier:@"showTripSchedule" sender:nil];
 }
 
+- (void) handlePanGestureFrom:(UIPanGestureRecognizer *)gestureRecognizer {
+    //NSLog(@"It works!");
+    /*_slider.frame = CGRectMake(_slider.frame.origin.x,
+                               [gestureRecognizer translationInView:self.view].y+275,
+                               _slider.frame.size.width,
+                               _slider.frame.size.height);*/
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     UISwipeGestureRecognizer* swipeDownGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeDownFrom:)];
     UISwipeGestureRecognizer* swipeUpGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeUpFrom:)];
+    //UIPanGestureRecognizer* panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGestureFrom:)];
     
     swipeDownGestureRecognizer.direction = UISwipeGestureRecognizerDirectionDown;
     swipeUpGestureRecognizer.direction = UISwipeGestureRecognizerDirectionUp;
+    //panGestureRecognizer.minimumNumberOfTouches = 1;
+    //panGestureRecognizer.maximumNumberOfTouches = 1;
     
     [self.view addGestureRecognizer:swipeDownGestureRecognizer];
     [self.view addGestureRecognizer:swipeUpGestureRecognizer];
+    //[self.view addGestureRecognizer:panGestureRecognizer];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     CLLocationCoordinate2D targetLocation;
-    targetLocation.latitude = [_trip.locationCoordinates.latitude doubleValue];
-    targetLocation.longitude = [_trip.locationCoordinates.longitude doubleValue];
+    targetLocation.latitude = [_trip.cityLocationCoordinates.latitude doubleValue];
+    targetLocation.longitude = [_trip.cityLocationCoordinates.longitude doubleValue];
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(targetLocation, 20000, 20000);
     [_mapView setRegion:viewRegion animated:YES];
 }

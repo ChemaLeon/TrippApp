@@ -10,8 +10,10 @@
 
 // This class is intended for the developers to populate the application's table with temporal data for testing purposes.
 
-@interface MockDataModel : NSObject
+@interface DataModel : NSObject
 
-+(NSArray*) GetAllTrips;
++(NSArray*) getAllTrips;
++(NSDate*)nsstringToNsdate:(NSString*)string;
++(NSString*)nsdateToNstring:(NSDate*)date;
 
 @end

@@ -16,13 +16,18 @@
 }
 
 // Constructor
-- (id) initWithLocationName:(NSString*)name Details:(NSString*)details AndDate:(NSString*)date {
+- (id) initWithLocationName:(NSString*)name Details:(NSString*)details ArrivalDate:(NSDate*)adate DepartureDate:(NSDate*)ddate {
     self = [super init];
     if (self) {
         _locationName = name;
         _details = details;
-        _dateOfTrip = date;
+        _arrivalDate = adate;
     }
+    return self;
+}
+
+- (id) initEmpty {
+    self = [super init];
     return self;
 }
 

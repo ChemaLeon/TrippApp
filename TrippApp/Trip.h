@@ -15,12 +15,16 @@
 
 @property NSString * locationName;
 @property NSString * details;
-@property NSString * dateOfTrip;
 @property NSArray * events;
-@property Location * locationCoordinates;
+@property Location * cityLocationCoordinates;
+@property NSDate * arrivalDate;
+@property NSDate * departureDate;
+@property NSString * arrivalLocation;
+@property NSString * departureLocation;
 
 - (id) init;
-- (id) initWithLocationName:(NSString*)name Details:(NSString*)details AndDate:(NSString*)date;
+- (id) initWithLocationName:(NSString*)name Details:(NSString*)details ArrivalDate:(NSDate*)adate DepartureDate:(NSDate*)ddate;
+- (id) initEmpty;
 - (void) setEvents:(NSArray *)events;
 
 @end

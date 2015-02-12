@@ -14,6 +14,7 @@
 @interface DetailTripViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UINavigationItem *detailUINavItem;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (weak, nonatomic) IBOutlet UIImageView *slider;
 @property Trip* trip;
 
 @end

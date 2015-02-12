@@ -9,8 +9,10 @@
 #import "TripsViewController.h"
 #import "TripTableViewCell.h"
 #import "DetailTripViewController.h"
-#import "MockDataModel.h"
+#import "DataModel.h"
 #import "Trip.h"
+#import "UrlRequester.h"
+#import "NewTripViewController.h"
 
 @implementation TripsViewController
 
@@ -22,7 +24,7 @@ NSArray* trips;
     TripTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     cell.tripTitleLabel.text = [trips[[indexPath row]] locationName];
     cell.tripDetailLabel.text = [trips[[indexPath row]] details];
-    cell.tripDateLabel.text = [trips[[indexPath row]] dateOfTrip];
+    cell.tripDateLabel.text = [DataModel nsdateToNstring:[trips[[indexPath row]] arrivalDate]];
     return cell;
 }
 
@@ -38,18 +40,29 @@ NSArray* trips;
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         detailViewController.detailUINavItem.title = [trips[[indexPath row]] locationName];
         detailViewController.trip = trips[[indexPath row]];
+    } else if ([[segue identifier] isEqualToString:@"showTripDetails"]) {
+        
     }
 }
 
 - (void) newTripButtonPressed {
-    NSLog(@"New Trip Button Pressed");
+    [self performSegueWithIdentifier:@"showNewTrip" sender:self];
+    //[UrlRequester GetJsonObjectsFrom:@"http://trippapp-salsastudio.rhcloud.com/profile/newUser/" WithCallback:@selector(finishedCall:) FromSource:self];
 }
 
 // Populate the NSArray of the trip data with the MockDataModel class. A temporal encapsulation of the Trips that the mock user has created on the device.
 - (void)viewDidLoad {
     [super viewDidLoad];
-    trips = [MockDataModel GetAllTrips];
+    trips = [DataModel getAllTrips];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(newTripButtonPressed)];
+}
+
+- (void) finishedCall:(NSArray*)jsonArray {
+    for (int i = 0; i < jsonArray.count; i++) {
+        //NSLog(@"Received: %@", [[jsonArray objectAtIndex:i] objectForKey:@"key"] );
+        //NSLog(@"Received: %@", jsonArray[i]);
+    }
+    NSLog(@"Received: %@", jsonArray);
 }
 
 - (void)didReceiveMemoryWarning {
