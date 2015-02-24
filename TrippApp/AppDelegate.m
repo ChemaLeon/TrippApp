@@ -5,18 +5,50 @@
 //  Created by Chema Leon on 2015-01-13.
 //  Copyright (c) 2015 Chema Leon. All rights reserved.
 //
-
 #import "AppDelegate.h"
+#import "APIServiceManager.h"
+#import "GlobalsManager.h"
 
 @interface AppDelegate ()
 
 @end
+
+NSString *const newUserService = @"newUserService";
+//NSString *const mapsKey = @"AIzaSyCyKpAQW_zR9t2XEjTGrXP9QDKEWKnMF4E";
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [self initializeNotifications];
+
+    //[GlobalsManager sharedInstance].mapsKey = mapsKey;
+    //[GMSServices provideAPIKey:[[GlobalsManager sharedInstance] mapsKey]];
+    // look for saved data.
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectoryPath = [paths objectAtIndex:0];
+    NSString *filePath = [documentsDirectoryPath stringByAppendingPathComponent:@"appData"];
+    
+    if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
+        NSData *data = [NSData dataWithContentsOfFile:filePath];
+        NSDictionary *savedData = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+        
+        if ([savedData objectForKey:@"userKey"] != nil) {
+            _userKey = [savedData objectForKey:@"userKey"];
+            [GlobalsManager sharedInstance].userKey = _userKey;
+        }
+    }
+    else
+    {
+        [APIServiceManager createNewUser:newUserService];
+        [GlobalsManager sharedInstance].userKey = _userKey;
+        
+    }
+    
+
+    
     return YES;
 }
 
@@ -41,5 +73,38 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+#pragma mark UserAPIKeyFunctions
+
+- (void) saveData {
+    NSMutableDictionary *dataDict = [[NSMutableDictionary alloc] initWithCapacity:3];
+    if (_userKey != nil) {
+        [dataDict setObject:_userKey forKey:@"userKey"];  // save the games array
+    }
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectoryPath = [paths objectAtIndex:0];
+    NSString *filePath = [documentsDirectoryPath stringByAppendingPathComponent:@"appData"];
+    
+    [NSKeyedArchiver archiveRootObject:dataDict toFile:filePath];
+}
+
+- (void) initializeNotifications{
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedUserKeyNotification:) name:newUserService object:nil];
+    
+}
+
+-(void) receivedUserKeyNotification:(NSNotification*) notification
+{
+    NSDictionary *theData = [notification userInfo];
+    if (theData != nil) {
+        _userKey = [theData objectForKey:@"userKey"];
+        [self saveData];
+    }
+    
+}
+
+
 
 @end

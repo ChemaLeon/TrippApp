@@ -22,9 +22,33 @@
 @property NSString * arrivalLocation;
 @property NSString * departureLocation;
 
+//Trip Attributes
+@property NSString * trip_id;
+@property NSString * city_id;
+@property NSString * city_name;
+@property NSString * country_name;
+@property NSString * date_arrival;
+@property NSString * date_departure;
+@property NSString * lat_arrival;
+@property NSString * lat_departure;
+@property NSString * lat_hotel;
+@property NSString * lng_arrival;
+@property NSString * lng_departure;
+@property NSString * lng_hotel;
+@property NSString * state_name;
+//User Tastes
+@property NSString * tourist;
+@property NSString * food;
+@property NSString * party;
+@property NSString * sport;
+@property NSString * culture;
+//Array of Events
+@property NSMutableArray * trip_events;
+
 - (id) init;
 - (id) initWithLocationName:(NSString*)name Details:(NSString*)details ArrivalDate:(NSDate*)adate DepartureDate:(NSDate*)ddate;
 - (id) initEmpty;
 - (void) setEvents:(NSArray *)events;
++ (NSMutableArray*) parseTripArray: (NSArray*)response;
 
 @end

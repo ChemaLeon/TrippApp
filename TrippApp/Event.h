@@ -14,7 +14,19 @@
 @property NSString * details;
 @property NSString * hourOfEvent;
 
+
+@property NSString * name;
+@property NSString * event_date;
+@property NSString * trip_location_id;
+@property NSString * event_type;
+@property NSString * lat;
+@property NSString * lng;
+@property NSString * period;
+@property NSString * phone;
+@property NSString * website;
+
 - (id) init;
 - (id) initWithLocationName:(NSString*)name Details:(NSString*)details AndHour:(NSString*)date;
++ (NSMutableArray*) parseEventArray: (NSArray*)response;
 
 @end
