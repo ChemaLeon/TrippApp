@@ -26,7 +26,7 @@
 @property NSString * website;
 
 - (id) init;
-- (id) initWithLocationName:(NSString*)name Details:(NSString*)details AndHour:(NSString*)date;
+- (id) initWithLocationName:(NSString*)name Details:(NSString*)details AndDate:(NSString*)date;
 + (NSMutableArray*) parseEventArray: (NSArray*)response;
 
 @end

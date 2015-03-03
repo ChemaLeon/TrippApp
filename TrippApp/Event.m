@@ -16,12 +16,12 @@
 }
 
 // Constructor
-- (id) initWithLocationName:(NSString*)name Details:(NSString*)details AndHour:(NSString*)hour {
+- (id) initWithLocationName:(NSString*)name Details:(NSString*)details AndDate:(NSString*)date {
     self = [super init];
     if (self) {
-        _locationName = name;
-        _details = details;
-        _hourOfEvent = hour;
+        self.locationName = name;
+        self.details = details;
+        self.event_date = date;
     }
     return self;
 }

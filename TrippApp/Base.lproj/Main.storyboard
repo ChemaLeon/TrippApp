@@ -138,15 +138,40 @@
                                 <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="dfb-lW-RIJ">
+                                <rect key="frame" x="170" y="211" width="37" height="37"/>
+                                <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </activityIndicatorView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="08s-8o-on4" userLabel="NO Button">
+                                <rect key="frame" x="57" y="247" width="90" height="90"/>
+                                <state key="normal" backgroundImage="No">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="triggerNewTripScreenSegue:" destination="bzd-xd-Lh5" eventType="touchUpInside" id="C0w-UU-QMM"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wg2-o0-Swr" userLabel="YES Button">
+                                <rect key="frame" x="228" y="247" width="90" height="90"/>
+                                <state key="normal" backgroundImage="Yes">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="triggerNewTripScreenSegue:" destination="bzd-xd-Lh5" eventType="touchUpInside" id="RWa-AY-bAA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.85490196078431369" green="0.83921568627450982" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="New Trip" id="onJ-4n-ARA"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="dfb-lW-RIJ" id="M1z-6c-cmf"/>
                         <outlet property="cityTableView" destination="THW-1o-ua1" id="JGZ-Bh-Dhk"/>
                         <outlet property="datePicker" destination="A4F-k4-90Z" id="vil-j0-EAA"/>
+                        <outlet property="negativeButton" destination="08s-8o-on4" id="lzG-cp-d9O"/>
                         <outlet property="nextButton" destination="Mh1-XX-idY" id="otv-6i-maM"/>
+                        <outlet property="positiveButton" destination="Wg2-o0-Swr" id="VIG-gb-0Bm"/>
                         <outlet property="progressView" destination="abl-he-968" id="SQu-UA-V52"/>
                         <outlet property="questionLabel" destination="WrW-qd-hm1" id="GvR-Pu-dZy"/>
                         <outlet property="searchBar" destination="OMC-Oi-EpX" id="qM6-j7-o8e"/>
@@ -487,9 +512,11 @@
     <resources>
         <image name="Circle" width="17" height="17"/>
         <image name="NextArrow" width="174" height="174"/>
+        <image name="No" width="174" height="174"/>
         <image name="Profile" width="25" height="25"/>
         <image name="Settings" width="25" height="25"/>
         <image name="Trips" width="25" height="25"/>
+        <image name="Yes" width="174" height="174"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="gNX-jl-EJT"/>

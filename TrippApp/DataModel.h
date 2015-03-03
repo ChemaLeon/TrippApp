@@ -7,13 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Trip.h"
 
 // This class is intended for the developers to populate the application's table with temporal data for testing purposes.
 
 @interface DataModel : NSObject
 
-+(NSArray*) getAllTrips;
-+(NSDate*)nsstringToNsdate:(NSString*)string;
-+(NSString*)nsdateToNstring:(NSDate*)date;
++ (NSArray*) getAllTrips;
++ (void)AddTrip:(Trip*)newTrip;
++ (NSDate*)nsstringToNsdate:(NSString*)string;
++ (NSDate*)nsstringToNstimedate:(NSString*)string;
++ (NSString*)nsdateToNstring:(NSDate*)date;
++ (NSString*)nstimedateToNstring:(NSDate*)date;
 
 @end

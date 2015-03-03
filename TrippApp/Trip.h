@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Location.h"
+#import "Event.h"
 
 // This class' purpose is to be a Data Model for a trip. It contains a location name, a description and a date intended for the trip to happen. To instantiate a new trip the developer must initialize the instance using the function inithWithLocationName, and introducing the trip information as parameters.
 
@@ -15,12 +16,13 @@
 
 @property NSString * locationName;
 @property NSString * details;
-@property NSArray * events;
+@property NSMutableArray * events;
 @property Location * cityLocationCoordinates;
 @property NSDate * arrivalDate;
 @property NSDate * departureDate;
 @property NSString * arrivalLocation;
 @property NSString * departureLocation;
+@property NSString * hotelName;
 
 //Trip Attributes
 @property NSString * trip_id;
@@ -48,7 +50,8 @@
 - (id) init;
 - (id) initWithLocationName:(NSString*)name Details:(NSString*)details ArrivalDate:(NSDate*)adate DepartureDate:(NSDate*)ddate;
 - (id) initEmpty;
-- (void) setEvents:(NSArray *)events;
+- (void) setEvents:(NSMutableArray *)events;
 + (NSMutableArray*) parseTripArray: (NSArray*)response;
+- (void) addEvent:(Event*)newEvent;
 
 @end

@@ -75,12 +75,8 @@ MBXRasterTileOverlay* tileSource;
 
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    
-
-}
-
 - (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     NSIndexPath *scrollIndexPath = [NSIndexPath indexPathForRow: 2 inSection:0];
     [[self tableView] scrollToRowAtIndexPath:scrollIndexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
 
