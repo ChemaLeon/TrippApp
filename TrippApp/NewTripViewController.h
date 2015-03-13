@@ -8,25 +8,31 @@
 
 #import <UIKit/UIKit.h>
 #import "Trip.h"
+#import "Event.h"
 
 @interface NewTripViewController : UIViewController <UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UISearchBar* searchBar;
-@property (weak, nonatomic) IBOutlet UIProgressView* progressView;
-@property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *progressImageViews;
-@property (nonatomic, strong) IBOutlet UITableView* cityTableView;
-@property int progressInt;
-@property (nonatomic, strong) NSMutableArray* cityNames;
-@property (nonatomic, strong) NSMutableArray* filteredCityNames;
-@property (nonatomic, strong) UITableView* tableView;
-@property (weak, nonatomic) IBOutlet UILabel* questionLabel;
-@property bool makeTextFieldEditable;
-@property (weak, nonatomic) IBOutlet UIDatePicker* datePicker;
-@property (weak, nonatomic) IBOutlet UIButton* nextButton;
+@property IBOutletCollection(UIImageView) NSArray* progressImageViews;
+@property IBOutlet UISearchBar* searchBar;
+@property IBOutlet UIProgressView* progressView;
+@property IBOutlet UITableView* cityTableView;
+@property IBOutlet UILabel* questionLabel;
+@property IBOutlet UIDatePicker* datePicker;
+@property IBOutlet UIButton* nextButton;
+@property IBOutlet UIButton* positiveButton;
+@property IBOutlet UIButton* negativeButton;
+@property IBOutlet UIActivityIndicatorView* activityIndicator;
+@property NSMutableArray* cityNames;
+@property NSMutableArray* filteredCityNames;
+@property UITableView* tableView;
 @property Trip* theNewTrip;
+@property NSDate* tempEventDate;
+@property bool makeTextFieldEditable;
+@property int progressInt;
+@property bool needsToLogEvent;
 
--(void)dismissModalView;
--(IBAction)triggerNewTripScreenSegue:(id)sender;
--(IBAction) dateChanged:(id)sender;
+- (void) dismissModalView;
+- (IBAction) triggerNewTripScreenSegue:(id)sender;
+- (IBAction) dateChanged:(id)sender;
 
 @end

@@ -72,4 +72,8 @@
     return result;
 }
 
+- (void) addEvent:(Event*)newEvent {
+    [self.events addObject:newEvent];
+}
+
 @end

@@ -461,7 +461,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="lXh-ja-TX2" kind="relationship" relationship="viewControllers" id="NDe-BH-boz"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="o76-mY-hdo" kind="relationship" relationship="viewControllers" id="HUz-TI-bfs"/>
                     </connections>
                 </tabBarController>
@@ -473,11 +472,16 @@
     <resources>
         <image name="Circle" width="17" height="17"/>
         <image name="NextArrow" width="174" height="174"/>
+<<<<<<< HEAD
+        <image name="Settings" width="42" height="42"/>
+        <image name="Trips" width="42" height="42"/>
+=======
         <image name="No" width="174" height="174"/>
         <image name="Profile" width="25" height="25"/>
         <image name="Settings" width="25" height="25"/>
         <image name="Trips" width="25" height="25"/>
         <image name="Yes" width="174" height="174"/>
+>>>>>>> 9a31eb640d34664186ecaa624b77de2595cb6489
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="gNX-jl-EJT"/>
