@@ -24,7 +24,6 @@
 		F47368A01A65B97300EF207B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F473689F1A65B97300EF207B /* main.m */; };
 		F47368A31A65B97300EF207B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F47368A21A65B97300EF207B /* AppDelegate.m */; };
 		F47368A61A65B97300EF207B /* TripsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F47368A51A65B97300EF207B /* TripsViewController.m */; };
-		F47368A91A65B97300EF207B /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F47368A81A65B97300EF207B /* ProfileViewController.m */; };
 		F47368AC1A65B97300EF207B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F47368AA1A65B97300EF207B /* Main.storyboard */; };
 		F47368B11A65B97300EF207B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F47368AF1A65B97300EF207B /* LaunchScreen.xib */; };
 		F47368BD1A65B97300EF207B /* TrippAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F47368BC1A65B97300EF207B /* TrippAppTests.m */; };
@@ -83,8 +82,6 @@
 		F47368A21A65B97300EF207B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F47368A41A65B97300EF207B /* TripsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TripsViewController.h; sourceTree = "<group>"; };
 		F47368A51A65B97300EF207B /* TripsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TripsViewController.m; sourceTree = "<group>"; };
-		F47368A71A65B97300EF207B /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
-		F47368A81A65B97300EF207B /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		F47368AB1A65B97300EF207B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F47368B01A65B97300EF207B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		F47368B61A65B97300EF207B /* TrippAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrippAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -231,7 +228,6 @@
 				F468DC511A71D14D00B1BDDA /* Networking Helper */,
 				F47368D71A66138C00EF207B /* Data Models */,
 				F47368CC1A65F0FE00EF207B /* Trip Management */,
-				F47368CD1A65F12000EF207B /* Profile Management */,
 				F47368CE1A65F13200EF207B /* Settings Management */,
 				F47368A11A65B97300EF207B /* AppDelegate.h */,
 				F47368A21A65B97300EF207B /* AppDelegate.m */,
@@ -277,15 +273,6 @@
 				F47368D31A660E6A00EF207B /* Trips Detail View */,
 			);
 			name = "Trip Management";
-			sourceTree = "<group>";
-		};
-		F47368CD1A65F12000EF207B /* Profile Management */ = {
-			isa = PBXGroup;
-			children = (
-				F47368A71A65B97300EF207B /* ProfileViewController.h */,
-				F47368A81A65B97300EF207B /* ProfileViewController.m */,
-			);
-			name = "Profile Management";
 			sourceTree = "<group>";
 		};
 		F47368CE1A65F13200EF207B /* Settings Management */ = {
@@ -484,7 +471,6 @@
 				F441D2B21A673A2C003CB7F1 /* Event.m in Sources */,
 				3989E7EE1A9C0F53000B6C0B /* BackGroundManager.m in Sources */,
 				3989E7EB1A9C00A0000B6C0B /* EventAnnotation.m in Sources */,
-				F47368A91A65B97300EF207B /* ProfileViewController.m in Sources */,
 				F47368A31A65B97300EF207B /* AppDelegate.m in Sources */,
 				3989E7E41A97B468000B6C0B /* DayPhase.m in Sources */,
 				3989E7D61A95CF58000B6C0B /* GlobalsManager.m in Sources */,

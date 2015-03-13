@@ -44,6 +44,7 @@ MBXRasterTileOverlay* tileSource;
     backbuttonHide = YES;
     nextbuttonHide = NO;
     [self initializeDaysArray];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
     //Set BackGround Transparent
     self.tableView.backgroundColor = [UIColor clearColor];
@@ -53,7 +54,7 @@ MBXRasterTileOverlay* tileSource;
     
     //Set Header
     UIView *blueFrameView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, 15)];
-    [blueFrameView setBackgroundColor:[UIColor colorWithRed:62/255.0 green:172/255.0 blue:210/255.0 alpha:1.0]];
+    [blueFrameView setBackgroundColor:[UIColor colorWithRed:46/255.0 green:154/255.0 blue:202/255.0 alpha:1.0]];
     
     self.tableView.tableHeaderView = blueFrameView;
     
@@ -115,7 +116,7 @@ MBXRasterTileOverlay* tileSource;
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *cellIdentifier = @"tripDetailTableCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    SWTableViewCell *cell = (SWTableViewCell *) [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     cell.backgroundColor = [UIColor colorWithRed:240/255.0 green:240/255.0 blue:240/255.0 alpha:0.9];
     
     for (UIView *view in cell.contentView.subviews) {
@@ -124,6 +125,8 @@ MBXRasterTileOverlay* tileSource;
     
     if (indexPath.row != 0)
     {
+        cell.leftUtilityButtons = [self leftButtons];
+        cell.delegate = self;
         cell.contentView.backgroundColor = [UIColor clearColor];
         UIView *whiteRoundedCornerView = [[UIView alloc] initWithFrame:CGRectMake(15,10,cell.frame.size.width-25,cell.frame.size.height-10)];
         whiteRoundedCornerView.layer.masksToBounds = NO;
@@ -211,6 +214,35 @@ MBXRasterTileOverlay* tileSource;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return phases.count;
+}
+
+- (NSArray *)leftButtons
+{
+    NSMutableArray *leftUtilityButtons = [NSMutableArray new];
+    
+    UIButton *removeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    removeBtn.backgroundColor = [UIColor clearColor];
+    UIImageView* removeImage = [[UIImageView alloc] initWithFrame:CGRectMake(35, 25, 30, 30)];
+    removeImage.image = [UIImage imageNamed:@"remove"];
+    [removeBtn addSubview:removeImage];
+    //[removeBtn setImage:[UIImage imageNamed:@"remove"] forState:UIControlStateNormal];
+    //removeBtn.imageEdgeInsets = UIEdgeInsetsMake(15, 15, 30, 30);
+    //removeBtn. = CGRectMake(25, 15, 30, 30);
+    [leftUtilityButtons addObject:removeBtn];
+
+
+    
+    UIButton *refreshBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    refreshBtn.backgroundColor = [UIColor clearColor];
+    //[refreshBtn setImage:[UIImage imageNamed:@"refresh"] forState:UIControlStateNormal];
+    //refreshBtn.imageEdgeInsets = UIEdgeInsetsMake(15, 15, 30, 30);
+    UIImageView* refreshImage = [[UIImageView alloc] initWithFrame:CGRectMake(25, 15, 50, 50)];
+    refreshImage.image = [UIImage imageNamed:@"refresh"];
+    [refreshBtn addSubview:refreshImage];
+    [leftUtilityButtons addObject:refreshBtn];
+    
+    
+    return leftUtilityButtons;
 }
 
 #pragma mark - Actions

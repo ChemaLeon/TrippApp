@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import <MBXMapKit/MBXMapKit.h>
+#import <SWTableViewCell/SWTableViewCell.h>
 #import "UIMapTableView.h"
 #import "Trip.h"
 #import "Event.h"
 
-@interface DetailTripViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate>
+@interface DetailTripViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate, SWTableViewCellDelegate>
 @property (weak, nonatomic) IBOutlet UINavigationItem *detailUINavItem;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UIMapTableView *tableView;

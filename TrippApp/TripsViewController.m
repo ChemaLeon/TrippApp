@@ -15,7 +15,7 @@
 #import "NewTripViewController.h"
 #import "APIServiceManager.h"
 #import "GlobalsManager.h"
-#import "BackGroundManager.h"
+//#import "BackGroundManager.h"
 
 NSString *const getTrips = @"getTrips";
 
@@ -32,7 +32,16 @@ NSMutableArray* trips;
     NSString* key = [GlobalsManager sharedInstance].userKey;
     [APIServiceManager getTripsFromUser: key withObserver:getTrips];
     self.tableView.backgroundColor = [UIColor clearColor];
-    self.imgView.image = [BackGroundManager getBGImage];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+
+
+    //self.imgView.image = [BackGroundManager getBGImage];
+    
+    // changing the unselected image color, you should change the selected image
+    // color if you want them to be different
+    
+    self.tabBarItem.image = [[UIImage imageNamed:@"Trips"]
+                             imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
 
     //trips = [DataModel getAllTrips];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(newTripButtonPressed)];

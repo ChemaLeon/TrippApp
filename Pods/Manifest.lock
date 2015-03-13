@@ -21,13 +21,16 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - MBXMapKit (0.7.0)
+  - SWTableViewCell (0.3.7)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.4)
   - MBXMapKit (~> 0.7.0)
+  - SWTableViewCell (~> 0.3.7)
 
 SPEC CHECKSUMS:
   AFNetworking: 8bee59492a6ff15d69130efa4d0dc67e0094a52a
   MBXMapKit: cf4ecf639c3abf5713ed4c1c995c7896949c79f3
+  SWTableViewCell: 25de71898e3fcd11cf75707ef90245acf990ec03
 
 COCOAPODS: 0.35.0

@@ -9,9 +9,13 @@
 #import "APIServiceManager.h"
 #import "GlobalsManager.h"
 
+//Color Definition
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
 @interface AppDelegate ()
 
 @end
+
 
 NSString *const newUserService = @"newUserService";
 //NSString *const mapsKey = @"AIzaSyCyKpAQW_zR9t2XEjTGrXP9QDKEWKnMF4E";
@@ -47,6 +51,33 @@ NSString *const newUserService = @"newUserService";
         
     }
     
+    
+    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x2E9ACA)];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+
+    //NSShadow *shadow = [[NSShadow alloc] init];
+    //shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
+    //shadow.shadowOffset = CGSizeMake(0, 1);
+    [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
+                                                           [UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1.0], NSForegroundColorAttributeName,
+                                                           nil, NSShadowAttributeName,
+                                                           [UIFont fontWithName:@"Futura" size:21.0], NSFontAttributeName, nil]];
+    
+    // Add this if you only want to change Selected Image color
+    // and/or selected image text
+    [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
+    
+    
+    // Add this code to change StateNormal text Color,
+    [UITabBarItem.appearance setTitleTextAttributes:
+     @{NSForegroundColorAttributeName : [UIColor whiteColor]}
+                                           forState:UIControlStateNormal];
+    
+    // then if StateSelected should be different, you should add this code
+    [UITabBarItem.appearance setTitleTextAttributes:
+     @{NSForegroundColorAttributeName : [UIColor whiteColor]}
+                                           forState:UIControlStateSelected];
 
     
     return YES;
