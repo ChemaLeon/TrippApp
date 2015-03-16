@@ -10,7 +10,7 @@
 
 @implementation DateHelper
 
-NSString *serverDateFormat = @"yyyy-MM-dd 'at' HH:mm:ss";
+NSString *serverDateFormat = @"yyyy-MM-dd HH:mm:ss";
 
 
 + (NSDate*)convertStrToDate:(NSString *)stringDate
@@ -21,6 +21,18 @@ NSString *serverDateFormat = @"yyyy-MM-dd 'at' HH:mm:ss";
     NSDate *date = [dateFormat dateFromString:stringDate];
     return date;
 }
+
++ (NSString*)convertDateToStr:(NSDate *)date
+{
+    // Convert date to string object
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:serverDateFormat];
+    NSString *stringDate = [dateFormat stringFromDate:date];
+    return stringDate;
+}
+
+
+
 
 + (NSInteger)daysBetweenDate:(NSDate*)fromDateTime andDate:(NSDate*)toDateTime
 {

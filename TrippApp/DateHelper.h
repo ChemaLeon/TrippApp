@@ -11,6 +11,7 @@
 @interface DateHelper : NSObject
 
 + (NSDate*) convertStrToDate: (NSString*)stringDate;
++ (NSString*)convertDateToStr:(NSDate *)date;
 + (NSInteger)daysBetweenDate:(NSDate*)fromDateTime andDate:(NSDate*)toDateTime;
 
 @end

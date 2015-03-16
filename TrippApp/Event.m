@@ -10,22 +10,6 @@
 
 @implementation Event
 
--(id) init {
-    NSAssert(NO, @"init not allowed");
-    return nil;
-}
-
-// Constructor
-- (id) initWithLocationName:(NSString*)name Details:(NSString*)details AndDate:(NSString*)date {
-    self = [super init];
-    if (self) {
-        self.locationName = name;
-        self.details = details;
-        self.event_date = date;
-    }
-    return self;
-}
-
 + (NSMutableArray*) parseEventArray: (NSArray*)response
 {
     NSMutableArray *result = [[NSMutableArray alloc] init];

@@ -14,27 +14,6 @@
 
 @implementation Trip
 
--(id) init {
-    NSAssert(NO, @"init not allowed");
-    return nil;
-}
-
-// Constructor
-- (id) initWithLocationName:(NSString*)name Details:(NSString*)details ArrivalDate:(NSDate*)adate DepartureDate:(NSDate*)ddate {
-    self = [super init];
-    if (self) {
-        _locationName = name;
-        _details = details;
-        _arrivalDate = adate;
-    }
-    return self;
-}
-
-- (id) initEmpty {
-    self = [super init];
-    return self;
-}
-
 
 + (NSMutableArray*) parseTripArray: (NSArray*)response
 {
@@ -70,10 +49,6 @@
     }
 
     return result;
-}
-
-- (void) addEvent:(Event*)newEvent {
-    [self.events addObject:newEvent];
 }
 
 @end

@@ -18,6 +18,7 @@
 
 
 NSString *const newUserService = @"newUserService";
+NSString *const getCitiesService = @"getCitiesService";
 //NSString *const mapsKey = @"AIzaSyCyKpAQW_zR9t2XEjTGrXP9QDKEWKnMF4E";
 
 @implementation AppDelegate
@@ -50,6 +51,8 @@ NSString *const newUserService = @"newUserService";
         [GlobalsManager sharedInstance].userKey = _userKey;
         
     }
+    
+    [APIServiceManager getCitieswithObserver:getCitiesService];
     
     
     [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x2E9ACA)];
@@ -123,6 +126,7 @@ NSString *const newUserService = @"newUserService";
 - (void) initializeNotifications{
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedUserKeyNotification:) name:newUserService object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedCitiesNotification:) name:getCitiesService object:nil];
     
 }
 
@@ -132,6 +136,15 @@ NSString *const newUserService = @"newUserService";
     if (theData != nil) {
         _userKey = [theData objectForKey:@"userKey"];
         [self saveData];
+    }
+    
+}
+
+-(void) receivedCitiesNotification:(NSNotification*) notification
+{
+    NSDictionary *theData = [notification userInfo];
+    if (theData != nil) {
+        [GlobalsManager sharedInstance].cities = [[NSArray alloc] initWithArray:(NSMutableArray*)[theData objectForKey:@"cities"]];
     }
     
 }

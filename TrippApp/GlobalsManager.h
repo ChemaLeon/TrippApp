@@ -14,6 +14,8 @@
 
 @property (strong, nonatomic) NSString *mapsKey;
 
+@property (strong, nonatomic) NSArray *cities;
+
 + (GlobalsManager *)sharedInstance;
 
 @end

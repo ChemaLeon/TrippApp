@@ -7,11 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Trip.h"
 
 @interface APIServiceManager : NSObject
 
 + (void) createNewUser: (NSString*)observerName;
 + (void) getTripsFromUser: (NSString*)userKey withObserver: (NSString*)observerName;
++ (void) getCitieswithObserver: (NSString*)observerName;
++ (void) createNewTrip:(Trip*)trip forUser: (NSString*)userKey withObserver: (NSString*)observerName;
 
 @end
 

@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1FF0ED72AA32C31EA278C8E5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C15B5469649BCA3A235C291 /* libPods.a */; };
+		39101FFB1AB4F52B009EDBCE /* LocationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 39101FFA1AB4F52B009EDBCE /* LocationHelper.m */; };
 		3910A8801A93D0A900933622 /* APIServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3910A87F1A93D0A900933622 /* APIServiceManager.m */; };
+		3925BD991AB281260007FBEB /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = 3925BD981AB281260007FBEB /* City.m */; };
 		3989E7D61A95CF58000B6C0B /* GlobalsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3989E7D51A95CF58000B6C0B /* GlobalsManager.m */; };
 		3989E7DF1A96B8A2000B6C0B /* UIMapTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3989E7DE1A96B8A2000B6C0B /* UIMapTableView.m */; };
 		3989E7E41A97B468000B6C0B /* DayPhase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3989E7E31A97B468000B6C0B /* DayPhase.m */; };
@@ -31,7 +33,6 @@
 		F47368CB1A65F0EF00EF207B /* DetailTripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F47368CA1A65F0EF00EF207B /* DetailTripViewController.m */; };
 		F47368D11A65FD3600EF207B /* TripTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F47368D01A65FD3600EF207B /* TripTableViewCell.m */; };
 		F47368DD1A6614B100EF207B /* Trip.m in Sources */ = {isa = PBXBuildFile; fileRef = F47368DC1A6614B100EF207B /* Trip.m */; };
-		F47368E01A66198200EF207B /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F47368DF1A66198200EF207B /* DataModel.m */; };
 		F4A1EDA11A817A95001B16F8 /* NewTripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A1EDA01A817A95001B16F8 /* NewTripViewController.m */; };
 		F4A2949B1A6D960A00730E30 /* Resources.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4A2949A1A6D960A00730E30 /* Resources.xcassets */; };
 /* End PBXBuildFile section */
@@ -48,8 +49,12 @@
 
 /* Begin PBXFileReference section */
 		2C15B5469649BCA3A235C291 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		39101FF91AB4F52B009EDBCE /* LocationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationHelper.h; sourceTree = "<group>"; };
+		39101FFA1AB4F52B009EDBCE /* LocationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationHelper.m; sourceTree = "<group>"; };
 		3910A87E1A93D0A900933622 /* APIServiceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIServiceManager.h; sourceTree = "<group>"; };
 		3910A87F1A93D0A900933622 /* APIServiceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIServiceManager.m; sourceTree = "<group>"; };
+		3925BD971AB281260007FBEB /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = City.h; sourceTree = "<group>"; };
+		3925BD981AB281260007FBEB /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = City.m; sourceTree = "<group>"; };
 		3989E7D41A95CF58000B6C0B /* GlobalsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalsManager.h; sourceTree = "<group>"; };
 		3989E7D51A95CF58000B6C0B /* GlobalsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalsManager.m; sourceTree = "<group>"; };
 		3989E7DD1A96B8A2000B6C0B /* UIMapTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIMapTableView.h; sourceTree = "<group>"; };
@@ -95,8 +100,6 @@
 		F47368D01A65FD3600EF207B /* TripTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripTableViewCell.m; sourceTree = "<group>"; };
 		F47368DB1A6614B100EF207B /* Trip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trip.h; sourceTree = "<group>"; };
 		F47368DC1A6614B100EF207B /* Trip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Trip.m; sourceTree = "<group>"; };
-		F47368DE1A66198200EF207B /* DataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
-		F47368DF1A66198200EF207B /* DataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
 		F4A1ED9F1A817A95001B16F8 /* NewTripViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewTripViewController.h; sourceTree = "<group>"; };
 		F4A1EDA01A817A95001B16F8 /* NewTripViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTripViewController.m; sourceTree = "<group>"; };
 		F4A2949A1A6D960A00730E30 /* Resources.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Resources.xcassets; sourceTree = "<group>"; };
@@ -133,6 +136,8 @@
 				3989E7E61A97F3CA000B6C0B /* DateHelper.m */,
 				3989E7EC1A9C0F53000B6C0B /* BackGroundManager.h */,
 				3989E7ED1A9C0F53000B6C0B /* BackGroundManager.m */,
+				39101FF91AB4F52B009EDBCE /* LocationHelper.h */,
+				39101FFA1AB4F52B009EDBCE /* LocationHelper.m */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -315,10 +320,10 @@
 				F47368DC1A6614B100EF207B /* Trip.m */,
 				F441D2B01A6739CA003CB7F1 /* Event.h */,
 				F441D2B11A673A2C003CB7F1 /* Event.m */,
-				F47368DE1A66198200EF207B /* DataModel.h */,
-				F47368DF1A66198200EF207B /* DataModel.m */,
 				3989E7E21A97B468000B6C0B /* DayPhase.h */,
 				3989E7E31A97B468000B6C0B /* DayPhase.m */,
+				3925BD971AB281260007FBEB /* City.h */,
+				3925BD981AB281260007FBEB /* City.m */,
 			);
 			name = "Data Models";
 			sourceTree = "<group>";
@@ -472,9 +477,9 @@
 				3989E7EE1A9C0F53000B6C0B /* BackGroundManager.m in Sources */,
 				3989E7EB1A9C00A0000B6C0B /* EventAnnotation.m in Sources */,
 				F47368A31A65B97300EF207B /* AppDelegate.m in Sources */,
+				39101FFB1AB4F52B009EDBCE /* LocationHelper.m in Sources */,
 				3989E7E41A97B468000B6C0B /* DayPhase.m in Sources */,
 				3989E7D61A95CF58000B6C0B /* GlobalsManager.m in Sources */,
-				F47368E01A66198200EF207B /* DataModel.m in Sources */,
 				3989E7F21A9C1A24000B6C0B /* EventDetailViewController.m in Sources */,
 				F468DC541A71D1B900B1BDDA /* UrlRequester.m in Sources */,
 				3910A8801A93D0A900933622 /* APIServiceManager.m in Sources */,
@@ -484,6 +489,7 @@
 				F47368D11A65FD3600EF207B /* TripTableViewCell.m in Sources */,
 				F47368C81A65BB8C00EF207B /* SettingsViewController.m in Sources */,
 				F4A1EDA11A817A95001B16F8 /* NewTripViewController.m in Sources */,
+				3925BD991AB281260007FBEB /* City.m in Sources */,
 				F46AA3101A81ED3000D9957C /* NewTripTableViewCell.m in Sources */,
 				F47368A61A65B97300EF207B /* TripsViewController.m in Sources */,
 				F47368CB1A65F0EF00EF207B /* DetailTripViewController.m in Sources */,

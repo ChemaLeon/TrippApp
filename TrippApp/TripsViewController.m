@@ -9,7 +9,6 @@
 #import "TripsViewController.h"
 #import "TripTableViewCell.h"
 #import "DetailTripViewController.h"
-#import "DataModel.h"
 #import "Trip.h"
 #import "UrlRequester.h"
 #import "NewTripViewController.h"
@@ -88,29 +87,14 @@ NSMutableArray* trips;
     if ([[segue identifier] isEqualToString:@"showTripDetails"]) {
         DetailTripViewController *detailViewController = [segue destinationViewController];
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        detailViewController.detailUINavItem.title = [trips[[indexPath row]] locationName];
+        detailViewController.detailUINavItem.title = [trips[[indexPath row]] city_name];
         detailViewController.trip = trips[[indexPath row]];
-    } else if ([[segue identifier] isEqualToString:@"showTripDetails"]) {
-        
     }
 }
 
 - (void) newTripButtonPressed {
     [self performSegueWithIdentifier:@"showNewTrip" sender:self];
-    //[UrlRequester GetJsonObjectsFrom:@"http://trippapp-salsastudio.rhcloud.com/profile/newUser/" WithCallback:@selector(finishedCall:) FromSource:self];
 }
-
-// Populate the NSArray of the trip data with the MockDataModel class. A temporal encapsulation of the Trips that the mock user has created on the device.
-
-
-- (void) finishedCall:(NSArray*)jsonArray {
-    for (int i = 0; i < jsonArray.count; i++) {
-        //NSLog(@"Received: %@", [[jsonArray objectAtIndex:i] objectForKey:@"key"] );
-        //NSLog(@"Received: %@", jsonArray[i]);
-    }
-    NSLog(@"Received: %@", jsonArray);
-}
-
 
 
 #pragma mark Notifications

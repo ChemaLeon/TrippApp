@@ -10,10 +10,6 @@
 
 @interface Event : NSObject
 
-@property NSString * locationName;
-@property NSString * details;
-@property NSString * hourOfEvent;
-
 
 @property NSString * name;
 @property NSString * event_date;
@@ -25,8 +21,9 @@
 @property NSString * phone;
 @property NSString * website;
 
-- (id) init;
-- (id) initWithLocationName:(NSString*)name Details:(NSString*)details AndDate:(NSString*)date;
+@property NSString * begin_date_time;
+@property NSString * end_date_time;
+
 + (NSMutableArray*) parseEventArray: (NSArray*)response;
 
 @end

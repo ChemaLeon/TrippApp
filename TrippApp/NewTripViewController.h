@@ -22,11 +22,12 @@
 @property IBOutlet UIButton* positiveButton;
 @property IBOutlet UIButton* negativeButton;
 @property IBOutlet UIActivityIndicatorView* activityIndicator;
-@property NSMutableArray* cityNames;
-@property NSMutableArray* filteredCityNames;
+@property NSArray* cities;
+@property NSMutableArray* filteredCities;
 @property UITableView* tableView;
 @property Trip* theNewTrip;
 @property NSDate* tempEventDate;
+@property NSString* tempEventName;
 @property bool makeTextFieldEditable;
 @property int progressInt;
 @property bool needsToLogEvent;

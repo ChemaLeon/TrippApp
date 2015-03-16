@@ -7,7 +7,6 @@
         <!--Trip Navigation Controller-->
         <scene sceneID="FaM-mS-Leb">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JgZ-KP-C0h" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="lXh-ja-TX2" userLabel="Trip Navigation Controller" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Trips" image="Trips" id="qvY-yp-ra7"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -23,6 +22,7 @@
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="s00-Ha-e1K"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JgZ-KP-C0h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="47" y="-768"/>
         </scene>
@@ -222,7 +222,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Trip Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0gb-FG-zud">
                                                     <rect key="frame" x="15" y="16" width="498" height="24"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Trip Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3j9-CN-JzH">
@@ -339,7 +339,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUy-14-MjQ">
                                         <rect key="frame" x="8" y="24" width="302" height="77"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -351,13 +351,13 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKj-TO-e1C">
                                         <rect key="frame" x="8" y="39" width="302" height="45"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QgJ-XO-wns">
                                         <rect key="frame" x="8" y="126" width="294" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -403,7 +403,7 @@
                                     <constraint firstAttribute="height" constant="42" id="gjo-3b-c2Q"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -419,7 +419,7 @@
                                     <constraint firstAttribute="width" constant="216" id="69I-wO-3G8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -461,7 +461,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="lXh-ja-TX2" kind="relationship" relationship="viewControllers" id="NDe-BH-boz"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="o76-mY-hdo" kind="relationship" relationship="viewControllers" id="HUz-TI-bfs"/>
                     </connections>
                 </tabBarController>
@@ -474,9 +473,8 @@
         <image name="Circle" width="17" height="17"/>
         <image name="NextArrow" width="174" height="174"/>
         <image name="No" width="174" height="174"/>
-        <image name="Profile" width="25" height="25"/>
-        <image name="Settings" width="25" height="25"/>
-        <image name="Trips" width="25" height="25"/>
+        <image name="Settings" width="42" height="42"/>
+        <image name="Trips" width="42" height="42"/>
         <image name="Yes" width="174" height="174"/>
     </resources>
     <inferredMetricsTieBreakers>
