@@ -12,6 +12,7 @@
 
 + (NSDate*) convertStrToDate: (NSString*)stringDate;
 + (NSString*)convertDateToStr:(NSDate *)date;
++ (NSString*)formatStrDatetoShow:(NSString *)date;
 + (NSInteger)daysBetweenDate:(NSDate*)fromDateTime andDate:(NSDate*)toDateTime;
 
 @end

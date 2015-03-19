@@ -16,6 +16,9 @@
 @property UIColor * light_color;
 @property UIColor * dark_color;
 @property UIColor * route_color;
+@property UIImage * clock;
+@property UIImage * marker;
+@property NSString * phase_name;
 
 + (NSArray*) getDayPhases;
 

@@ -11,7 +11,7 @@
 @implementation DateHelper
 
 NSString *serverDateFormat = @"yyyy-MM-dd HH:mm:ss";
-
+NSString *showDateFormat = @"MM/dd/yyyy";
 
 + (NSDate*)convertStrToDate:(NSString *)stringDate
 {
@@ -31,6 +31,14 @@ NSString *serverDateFormat = @"yyyy-MM-dd HH:mm:ss";
     return stringDate;
 }
 
++ (NSString*)formatStrDatetoShow:(NSString *)date
+{
+    // Convert date to string object
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:showDateFormat];
+    NSString *stringDate = [dateFormat stringFromDate: [DateHelper convertStrToDate:date]];
+    return stringDate;
+}
 
 
 

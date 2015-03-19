@@ -10,6 +10,7 @@
 
 @interface EventAnnotation : MKPointAnnotation
 
+@property NSString* annotationPhase;
 @property UIImage* annotationIcon;
 
 @end

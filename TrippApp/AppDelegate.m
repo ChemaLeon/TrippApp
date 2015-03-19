@@ -28,6 +28,7 @@ NSString *const getCitiesService = @"getCitiesService";
     // Override point for customization after application launch.
     
     [self initializeNotifications];
+    
 
     //[GlobalsManager sharedInstance].mapsKey = mapsKey;
     //[GMSServices provideAPIKey:[[GlobalsManager sharedInstance] mapsKey]];
@@ -148,7 +149,6 @@ NSString *const getCitiesService = @"getCitiesService";
     }
     
 }
-
 
 
 @end

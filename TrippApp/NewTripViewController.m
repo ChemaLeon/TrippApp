@@ -31,12 +31,11 @@ NSString *const createNewTrip = @"createNewTrip";
 
 - (void) dismissModalView {                             // Close questionaire and return to Trip Management.
     [self dismissViewControllerAnimated:YES completion:nil];
+    //[self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void) viewDidLoad {                                  // Do any additional setup after loading the view.
     [super viewDidLoad];
-    
-    [self initializeNotifications];
     
     // Delegates setup
     self.searchBar.delegate = self;
@@ -84,7 +83,7 @@ NSString *const createNewTrip = @"createNewTrip";
             self.searchBar.placeholder = @"Departure Time";
             self.datePicker.viewForBaselineLayout.hidden = NO;
             self.nextButton.hidden = NO;
-            [self.datePicker setMinimumDate:[DateHelper convertStrToDate:self.theNewTrip.date_arrival]];
+            [self.datePicker setMinimumDate:[[DateHelper convertStrToDate:self.theNewTrip.date_arrival] dateByAddingTimeInterval:60*60*4]];
             [self updateProgressTo:self.progressInt];
             break;
         case 3:
@@ -129,6 +128,8 @@ NSString *const createNewTrip = @"createNewTrip";
             self.searchBar.placeholder = @"Meeting time";
             self.datePicker.viewForBaselineLayout.hidden = NO;
             self.nextButton.hidden = NO;
+            [self.datePicker setMinimumDate:[DateHelper convertStrToDate:self.theNewTrip.date_arrival]];
+            [self.datePicker setMaximumDate:[DateHelper convertStrToDate:self.theNewTrip.date_departure]];
             [self updateProgressTo:4];
             break;
         case 8:
@@ -158,6 +159,7 @@ NSString *const createNewTrip = @"createNewTrip";
 //            [tripdetails appendString:@"'s Trip"];
 //            self.theNewTrip.details = tripdetails;
 //            [DataModel AddTrip:self.theNewTrip];
+            [self initializeNotifications];
             [APIServiceManager createNewTrip:_theNewTrip forUser:[GlobalsManager sharedInstance].userKey withObserver:createNewTrip];
             
         }
@@ -408,5 +410,6 @@ NSString *const createNewTrip = @"createNewTrip";
     [self performSelector:@selector(dismissModalView) withObject:nil afterDelay:0];
     
 }
+
 
 @end

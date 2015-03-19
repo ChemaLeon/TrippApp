@@ -20,17 +20,23 @@ PODS:
   - AFNetworking/UIKit (2.5.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - Masonry (0.6.1)
   - MBXMapKit (0.7.0)
+  - SKTagView (0.4):
+    - Masonry
   - SWTableViewCell (0.3.7)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.4)
   - MBXMapKit (~> 0.7.0)
+  - SKTagView (~> 0.4)
   - SWTableViewCell (~> 0.3.7)
 
 SPEC CHECKSUMS:
   AFNetworking: 8bee59492a6ff15d69130efa4d0dc67e0094a52a
+  Masonry: 2cb49fd14d203d2db5ca6bb017135b235dde9980
   MBXMapKit: cf4ecf639c3abf5713ed4c1c995c7896949c79f3
+  SKTagView: 2bce1d0495275c17775c28403276d89c63abd2ae
   SWTableViewCell: 25de71898e3fcd11cf75707ef90245acf990ec03
 
 COCOAPODS: 0.35.0

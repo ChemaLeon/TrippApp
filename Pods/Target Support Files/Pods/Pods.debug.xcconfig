@@ -1,6 +1,6 @@
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AFNetworking" "${PODS_ROOT}/Headers/Public/MBXMapKit" "${PODS_ROOT}/Headers/Public/SWTableViewCell"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/AFNetworking" -isystem "${PODS_ROOT}/Headers/Public/MBXMapKit" -isystem "${PODS_ROOT}/Headers/Public/SWTableViewCell"
-OTHER_LDFLAGS = -ObjC -l"Pods-AFNetworking" -l"Pods-MBXMapKit" -l"Pods-SWTableViewCell" -l"sqlite3" -framework "CoreGraphics" -framework "MobileCoreServices" -framework "Security" -framework "SystemConfiguration"
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AFNetworking" "${PODS_ROOT}/Headers/Public/MBXMapKit" "${PODS_ROOT}/Headers/Public/Masonry" "${PODS_ROOT}/Headers/Public/SKTagView" "${PODS_ROOT}/Headers/Public/SWTableViewCell"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/AFNetworking" -isystem "${PODS_ROOT}/Headers/Public/MBXMapKit" -isystem "${PODS_ROOT}/Headers/Public/Masonry" -isystem "${PODS_ROOT}/Headers/Public/SKTagView" -isystem "${PODS_ROOT}/Headers/Public/SWTableViewCell"
+OTHER_LDFLAGS = -ObjC -l"Pods-AFNetworking" -l"Pods-MBXMapKit" -l"Pods-Masonry" -l"Pods-SKTagView" -l"Pods-SWTableViewCell" -l"sqlite3" -framework "CoreGraphics" -framework "Foundation" -framework "MobileCoreServices" -framework "Security" -framework "SystemConfiguration" -framework "UIKit"
 OTHER_LIBTOOLFLAGS = $(OTHER_LDFLAGS)
 PODS_ROOT = ${SRCROOT}/Pods

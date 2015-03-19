@@ -15,6 +15,11 @@
 + (void) getTripsFromUser: (NSString*)userKey withObserver: (NSString*)observerName;
 + (void) getCitieswithObserver: (NSString*)observerName;
 + (void) createNewTrip:(Trip*)trip forUser: (NSString*)userKey withObserver: (NSString*)observerName;
++ (void) getTagsFromUser: (NSString*)userKey withObserver: (NSString*)observerName;
++ (void) updateUserTaste:(NSString*) taste withValue: (NSNumber*)value forUser: (NSString*)userKey withObserver: (NSString*)observerName;
++ (void) getNewSuggestLocation:(NSDictionary*)location forUser: (NSString*)userKey withObserver: (NSString*)observerName;
++ (void) dismissLocation:(NSDictionary*)location forUser: (NSString*)userKey withObserver: (NSString*)observerName;
++ (void) getTagsForLocation:(NSString*)location_id withObserver: (NSString*)observerName;
 
 @end
 
